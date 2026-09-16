@@ -3,192 +3,211 @@
 
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="Academic Webpage" />
-    <meta name="author" content="senli1073" />
-    <title id="title"></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Linyu Zha</title>
+    <meta name="description"
+        content="Linyu Zha (查林煜), master's student in Industrial Economics at Tianjin University of Finance and Economics. Data analysis and financial management." />
 
-    <!-- Icon -->
     <link rel="icon" type="image/x-icon" href="static/assets/favicon.ico" />
 
-    <!-- Bootstrap icons-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;family=Instrument+Sans:wght@400;500;600;700&amp;family=Noto+Sans+SC:wght@400;500;700&amp;display=swap" />
 
-    <!-- Google fonts-->
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,600;1,600&amp;display=swap"
-        rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,500;0,600;0,700;1,300;1,500;1,600;1,700&amp;display=swap"
-        rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,400;1,400&amp;display=swap"
-        rel="stylesheet" />
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
 
-    <!-- Core theme CSS (includes Bootstrap)-->
-    <link type="text/css" href="static/css/styles.css" rel="stylesheet" />
-    <link type="text/css" href="static/css/main.css" rel="stylesheet" />
+    <!-- Theme (set before paint) -->
+    <script>
+        (function () {
+            var stored = null;
+            try { stored = localStorage.getItem('theme'); } catch (e) { stored = null; }
+            var forced = null;
+            try {
+                forced = new URLSearchParams(window.location.search).get('theme');
+            } catch (e) { forced = null; }
+            var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            var theme = (forced === 'light' || forced === 'dark') ? forced
+                : ((stored === 'light' || stored === 'dark') ? stored : (prefersDark ? 'dark' : 'light'));
+            document.documentElement.setAttribute('data-theme', theme);
+            if ('IntersectionObserver' in window) {
+                document.documentElement.classList.add('js');
+            }
+        })();
+    </script>
 
-    <!-- Bootstrap core JS-->
-    <script type="text/javascript" src="static/js/bootstrap.bundle.min.js"></script>
-
-    <!-- For Compatability -->
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    
-    <!-- Markdown -->
-    <script type="text/javascript" src="static/js/marked.min.js"></script>
+    <!-- Styles -->
+    <link rel="stylesheet" href="static/css/main.css" />
 
     <!-- Mathematics -->
     <script>
-        // See https://docs.mathjax.org/en/latest/index.html for more details.
         MathJax = {
             tex: {
-                packages: {},              // extensions to use
-                inlineMath: [              // start/end delimiter pairs for in-line math
-                    ['$', '$'],
-                    ['\\(', '\\)']
-                ],
-                displayMath: [             // start/end delimiter pairs for display math
-                    ['$$', '$$'],
-                    ['\\[', '\\]']
-                ],
-                processEscapes: false,      // use \$ to produce a literal dollar sign
-                processEnvironments: true, // process \begin{xxx}...\end{xxx} outside math mode
-                processRefs: true,         // process \ref{...} outside of math mode
-                digits: /^(?:[0-9]+(?:\{,\}[0-9]{3})*(?:\.[0-9]*)?|\.[0-9]+)/,    // pattern for recognizing numbers
-                tags: 'all',              // or 'ams' or 'all'
-                tagSide: 'right',          // side for \tag macros
-                tagIndent: '0.8em',        // amount to indent tags
-                useLabelIds: true,         // use label name rather than tag for ids
-                maxMacros: 10000,          // maximum number of macro substitutions per expression
-                maxBuffer: 5 * 1024,       // maximum size for the internal TeX string (5K)
-                // baseURL:                   // URL for use with links to tags (when there is a <base> tag in effect)
-                // (document.getElementsByTagName('base').length === 0) ? '' : String(document.location).replace(/#.*$/, ''),
-                formatError:               // function called when TeX syntax errors occur
-                    (jax, err) => jax.formatError(err)
-            }
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: false,
+                processEnvironments: true
+            },
+            svg: { fontCache: 'global' }
         };
     </script>
-    <script type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
-    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    
-    <!-- Core JS-->
-    <script type="text/javascript" src="static/js/scripts.js"></script>
-    <script type="text/javascript" src="static/js/js-yaml.min.js"></script>
-    <!-- Projects loader -->
-    <script type="text/javascript" src="static/js/projects.js"></script>
+    <script type="text/javascript" id="MathJax-script" defer src="static/js/tex-svg.js"></script>
 
+    <!-- Markdown + YAML -->
+    <script type="text/javascript" src="static/js/marked.min.js"></script>
+    <script type="text/javascript" src="static/js/js-yaml.min.js"></script>
 </head>
 
-<body id="page-top">
-    <!-- Navigation-->
-    <nav class="header navbar navbar-expand-lg navbar-light fixed-top shadow-sm" id="mainNav">
-        <div class="container px-5">
-            <a id="page-top-title" class="navbar-brand fw-bold" href="#page-top"></a>
-            <!-- <a href="#page-top"><img src="static/assets/img/CUMT_LOGO.svg" style="width: 11rem;"></a> -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
-                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                MENU
-                <i class="bi-list"></i>
+<body>
+    <a class="skip-link" href="#home">Skip to content</a>
+
+    <!-- Navigation -->
+    <header class="nav" id="mainNav">
+        <div class="wrap nav-inner">
+            <a class="nav-brand" href="#page-top">
+                <span class="nav-mark" aria-hidden="true">LZ</span>
+                <span class="nav-brand-name" id="page-top-title">&nbsp;</span>
+            </a>
+
+            <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="navMenu">
+                <span class="nav-toggle-label">Menu</span>
+                <span class="nav-toggle-icon" aria-hidden="true"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ms-auto me-4 my-3 my-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link me-lg-3" href="#page-top">HOME</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link me-lg-3" href="#publications">OUTPUTS</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link me-lg-3" href="#awards">AWARDS</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link me-lg-3" href="#projects">PROJECTS</a>
-                    </li>
 
-                </ul>
+            <nav class="nav-menu" id="navMenu" aria-label="Main navigation">
+                <a class="nav-link is-active" href="#page-top">Home</a>
+                <a class="nav-link" href="#publications">Outputs</a>
+                <a class="nav-link" href="#awards">Awards</a>
+                <a class="nav-link" href="#projects">Projects</a>
+                <button class="theme-toggle" id="themeToggle" type="button" aria-pressed="false">
+                    <i class="ph ph-moon" aria-hidden="true"></i>
+                    <span class="theme-toggle-label">Dark</span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero -->
+        <section class="hero" id="page-top">
+            <div class="wrap hero-grid">
+                <div class="hero-copy">
+                    <p class="hero-name">
+                        <span class="hero-name-en">Linyu Zha</span>
+                        <span class="hero-name-cn">查林煜</span>
+                    </p>
+                    <h1 class="hero-title" id="hero-title">&nbsp;</h1>
+                    <p class="hero-lead">
+                        Tableau, FineBI, Power Query, Stata, Python and SQL; LLM, RAG, Dify, LangChain and LangGraph;
+                        ACCA (13/13).
+                    </p>
+                    <div class="hero-actions">
+                        <a class="btn btn-primary" href="#projects">View projects</a>
+                        <a class="btn btn-ghost" href="mailto:xzxgsjgs@163.com">Email me</a>
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="hero-plate" aria-hidden="true"></div>
+                    <figure class="hero-portrait">
+                        <img src="static/assets/img/photo.png" width="1052" height="1495"
+                            alt="Portrait of Linyu Zha" />
+                    </figure>
+                </div>
             </div>
-        </div>
-    </nav>
+        </section>
 
-    <!-- Top Section -->
-    <section class="top-section" style="background-image: url('static/assets/img/background.jpeg');">
-        <div class="top-section-content">
-            <div class="container px-5">
-                <h2 id="top-section-bg-text" class="text-white display-3 lh-1 font-alt"></h2>
+        <!-- Campus band -->
+        <div class="wrap band-wrap">
+            <figure class="band">
+                <img src="static/assets/img/background.jpeg" width="1920" height="400"
+                    alt="Library and lake on the Tianjin University of Finance and Economics campus at dusk" />
+            </figure>
+        </div>
+
+        <!-- About -->
+        <section class="section" id="home">
+            <div class="wrap">
+                <header class="section-head">
+                    <h2 id="about-title">&nbsp;</h2>
+                </header>
+                <div class="section-body" data-doc="home">
+                    <div class="skeleton" aria-hidden="true">
+                        <span class="skeleton-line skeleton-line-long"></span>
+                        <span class="skeleton-line"></span>
+                        <span class="skeleton-line skeleton-line-short"></span>
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
-    <!-- Top Section -->
+        </section>
 
-    <!-- Photo -->
-    <div class="container px-5">
-        <div id="avatar">
-            <img class="shadow" src="static/assets/img/photo.png">
-        </div>
-    </div>
-    <!-- Photo -->
-    
-    <!-- Home -->
-    <section class="bg-gradient-primary-to-secondary-light mt5 md5" id="home">
-        <div class="container px-5">
-            <header>
-                <h2 id="home-subtitle"> </h2>
-                <!-- <span class="bi bi-list"></span> -->
-            </header>
-            <div class="main-body" id="home-md"></div>
-        </div>
-    </section>
-    <!-- Home -->
-
-    <!-- Publications -->
-    <section class="bg-gradient-primary-to-secondary-gray mt5 md5" id="publications">
-        <div class="container px-5">
-            <header>
-                <h2 id="publications-subtitle"><i class="bi bi-file-text-fill"></i>&nbsp;OUTPUTS</h2>
-            </header>
-            <div class="main-body" id="publications-md"></div>
-
-        </div>
-    </section>
-    <!-- Publications  -->
-
-    <!-- Awards -->
-    <section class="bg-gradient-primary-to-secondary-light mt5 md5" id="awards">
-        <div class="container px-5">
-            <header>
-                <h2 id="awards-subtitle"><i class="bi bi-award-fill"></i>AWARDS </h2>
-            </header>
-            <div class="main-body" id="awards-md"></div>
-
-        </div>
-    </section>
-    <!-- Awards -->
-
-    <!-- Projects -->
-    <section class="bg-gradient-primary-to-secondary-gray mt5 md5" id="projects">
-        <div class="container px-5">
-            <header>
-                <h2 id="projects-subtitle"><i class="bi bi-folder-fill"></i>&nbsp;PROJECTS</h2>
-            </header>
-            <div class="main-body" id="projects-md">
-                <!-- 项目列表由 projects.js 动态生成 -->
+        <!-- Outputs -->
+        <section class="section" id="publications">
+            <div class="wrap">
+                <header class="section-head">
+                    <h2>Outputs</h2>
+                </header>
+                <div class="section-body" data-doc="publications">
+                    <div class="skeleton" aria-hidden="true">
+                        <span class="skeleton-line skeleton-line-long"></span>
+                        <span class="skeleton-line"></span>
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
-    <!-- Projects -->
+        </section>
 
-    <!-- Footer-->
-    <footer class="bg-bottom text-center py-5">
-        <div class="container px-5">
-            <div class="text-white-50 small">
-                <div id="copyright-text" class="mb-2"></div>
-                <a id="github-link" href="https://github.com/senli1073">Github</a>
-                <span class="mx-1">&middot;</span>
-                <a id="license-link" href="https://github.com/senli1073/senli1073.github.io/blob/main/LICENSE">License</a>
+        <!-- Awards -->
+        <section class="section" id="awards">
+            <div class="wrap">
+                <header class="section-head">
+                    <h2>Awards</h2>
+                </header>
+                <div class="section-body" data-doc="awards">
+                    <div class="skeleton" aria-hidden="true">
+                        <span class="skeleton-line"></span>
+                        <span class="skeleton-line skeleton-line-long"></span>
+                        <span class="skeleton-line skeleton-line-short"></span>
+                    </div>
+                </div>
             </div>
+        </section>
+
+        <!-- Projects -->
+        <section class="section" id="projects">
+            <div class="wrap">
+                <header class="section-head">
+                    <h2>Projects</h2>
+                </header>
+                <div class="section-body" id="projects-md">
+                    <div class="skeleton" aria-hidden="true">
+                        <span class="skeleton-line skeleton-line-long"></span>
+                        <span class="skeleton-line"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="wrap footer-inner">
+            <p class="footer-copy" id="copyright-text">&nbsp;</p>
+            <nav class="footer-links" aria-label="Elsewhere">
+                <a href="https://github.com/xzxgsjgs" target="_blank" rel="noopener noreferrer">
+                    <i class="ph ph-github-logo" aria-hidden="true"></i>GitHub
+                </a>
+                <a href="https://github.com/xzxgsjgs/xzxgsjgs.github.io/blob/main/LICENSE"
+                    target="_blank" rel="noopener noreferrer">
+                    <i class="ph ph-scales" aria-hidden="true"></i>License
+                </a>
+            </nav>
         </div>
     </footer>
 
+    <script type="text/javascript" src="static/js/projects.js"></script>
+    <script type="text/javascript" src="static/js/site.js"></script>
 </body>
 
 </html>

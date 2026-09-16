@@ -1,7 +1,25 @@
 [
   {
+    "title": "Enterprise Credit Scoring Agent",
+    "subtitle": "Independent Project / Python, LangGraph, Scorecardpy, LightGBM / 2026",
+    "description": "Builds enterprise credit scorecards end to end: 17 deterministic Python tools handle CSMAR panel cleaning, time-safe WOE/IV feature engineering, logistic scorecard fitting and PSI validation, while the LLM only orchestrates and explains. Validated with 10-year expanding-window cross-validation.",
+    "tags": [
+      "Python",
+      "LangGraph",
+      "Scorecardpy",
+      "LightGBM",
+      "LLM Agent"
+    ],
+    "metrics": [
+      { "value": "0.935", "label": "AUC (10-year CV)" },
+      { "value": "0.747", "label": "KS" },
+      { "value": "17", "label": "Deterministic tools" }
+    ],
+    "repo": "https://github.com/xzxgsjgs/Enterprise-Credit-Scoring-Agent"
+  },
+  {
     "title": "Enterprise BI Product Operation Analysis",
-    "subtitle": "Independent Project | FineBI | Product Operation | 2026",
+    "subtitle": "Independent Project / FineBI, Product Operation / 2026",
     "description": "Built a complete product operation analysis workflow based on enterprise BI user behavior data, including KPI dashboard construction, funnel analysis, user segmentation, key behavior identification, product optimization proposals and A/B testing design.",
     "tags": [
       "FineBI",
